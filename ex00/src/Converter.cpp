@@ -6,7 +6,7 @@
 /*   By: stopp <stopp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/09 13:55:06 by stopp             #+#    #+#             */
-/*   Updated: 2025/01/13 16:23:03 by stopp            ###   ########.fr       */
+/*   Updated: 2025/01/14 17:36:47 by stopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -202,5 +202,9 @@ void	Converter::convert(std::string input)
 				<< "float: impossible" << std::endl
 				<< "double: impossible" << std::endl;
 			}
+			break;
+		default:
+			std::cerr << "Unexpected input type." << std::endl;
+			break;
 	}
 }
