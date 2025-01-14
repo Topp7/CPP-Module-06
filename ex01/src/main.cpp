@@ -6,7 +6,7 @@
 /*   By: stopp <stopp@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 17:30:21 by stopp             #+#    #+#             */
-/*   Updated: 2025/01/13 18:25:25 by stopp            ###   ########.fr       */
+/*   Updated: 2025/01/14 17:27:30 by stopp            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 int	main(void)
 {
-	Data data = {42, "dataString"};
+	Data	testData;
 
-	uintptr_t uintptr = Serializer::serialize(&data);
-	Data* dataptr = Serializer::deserialize(uintptr);
-
-	std::cout << "Data : " << &data << std::endl;
-	std::cout << "uintptr : " << &uintptr << std::endl;
-	std::cout << "Data_ptr : " << dataptr << std::endl;
+	testData.a = 1;
+	testData.test = "42";
+	std::cout << "before Serialization	" << &testData << std::endl;
+	std::cout << std::hex << "uintptr:		" << Serializer::serialize(&testData) << std::endl;
+	std::cout << "after Serialization	" << Serializer::deserialize(Serializer::serialize(&testData)) << std::endl;
 }
